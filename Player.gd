@@ -20,6 +20,8 @@ func _process(delta):
 		rotation_degrees = 0
 
 func _on_Player_area_entered(area):
+	if not $playerCrash.playing:
+		$playerCrash.play()
 	life -= 1
 	if life == 0:
 		get_tree().change_scene("res://scenes/Menu.tscn")

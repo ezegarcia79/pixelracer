@@ -16,6 +16,9 @@ func _process(delta):
 	if position.y > 2048 or position.y < -1024:
 		queue_free()
 	
+	if (not $blackCarPassing.playing) and (position.y > 150):
+		$blackCarPassing.play()
+		
 func _on_Timer_timeout():
 	if randi() % 1:
 		position.x += 60

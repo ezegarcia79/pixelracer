@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Parallax.gd" type="Script" id=1]
-[ext_resource path="res://sprites/3-lane_interstate_highway_road.png" type="Texture" id=2]
+[ext_resource path="res://sprites/road_with_textures.jpeg" type="Texture" id=2]
 
 [node name="Road" type="ParallaxBackground"]
 script = ExtResource( 1 )

@@ -12,6 +12,10 @@ func _process(delta):
 	else:
 		position.y -= verticalSpeed * delta
 	
+	if (not $redCarPassing.playing) and (position.y > 150):
+		$redCarPassing.play()
+		
+		
 	verticalSpeed = 1.008 * verticalSpeed
 	if position.y > 2048 or position.y < -1024:
 		queue_free()
