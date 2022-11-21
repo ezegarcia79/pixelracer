@@ -1,16 +1,16 @@
 extends Node2D
 var collision = false
 var life = 3
-onready var hud = $Hud
+var turningSpeed = 6
 
 func _process(delta):
 	if Input.is_action_pressed("move_left"):
 		if position.x > 100:
-			position.x -= 10
+			position.x -= turningSpeed
 		
 	if Input.is_action_pressed("move_right"):
 		if position.x < 390:
-			position.x += 10
+			position.x += turningSpeed
 	
 	if collision:
 		rotation_degrees += 6

@@ -1,12 +1,18 @@
 extends Area2D
 
 var verticalSpeed = 300
-onready var hud = $Hud
+var hasPassed = false
 
 func _ready():
 	randomize()
 	
 func _process(delta):
+	
+	if parallax.gearShift == 'lo':
+		verticalSpeed = verticalSpeed / 2
+	else:
+		verticalSpeed = verticalSpeed
+		
 	if Input.is_action_pressed("accelerate"):
 		position.y += verticalSpeed * delta
 	else:
@@ -16,7 +22,8 @@ func _process(delta):
 	if position.y > 2048 or position.y < -1024:
 		queue_free()
 	
-	if (not $blackCarPassing.playing) and (position.y > 150):
+	if not hasPassed and (not $blackCarPassing.playing) and (position.y > 150):
+		hasPassed = true
 		$blackCarPassing.play()
 		
 func _on_Timer_timeout():

@@ -14,10 +14,18 @@ config/name="Pixel Racer"
 run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+parallax="*res://Parallax.gd"
+
 [display]
 
 window/size/width=600
 window/size/height=1024
+
+[global]
+
+filter=true
 
 [gui]
 
@@ -38,6 +46,11 @@ move_right={
 move_left={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+gearShift={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
  ]
 }
 

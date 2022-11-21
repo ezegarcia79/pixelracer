@@ -1,18 +1,24 @@
 extends Area2D
 
 var verticalSpeed = 300
-onready var hud = $Hud
+var hasPassed = false
 
 func _ready():
 	randomize()
 	
 func _process(delta):
+	if parallax.gearShift == 'lo':
+		verticalSpeed = verticalSpeed / 2
+	else:
+		verticalSpeed = verticalSpeed
+		
 	if Input.is_action_pressed("accelerate"):
 		position.y += verticalSpeed * delta
 	else:
 		position.y -= verticalSpeed * delta
 	
-	if (not $redCarPassing.playing) and (position.y > 150):
+	if not hasPassed and (not $redCarPassing.playing) and (position.y > 150):
+		hasPassed = true
 		$redCarPassing.play()
 		
 		
