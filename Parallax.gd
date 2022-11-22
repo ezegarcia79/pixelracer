@@ -16,11 +16,7 @@ func _process(delta):
 	if Input.is_action_pressed("accelerate") and gearShift == 'hi':
 		scroll_offset.y += scrolling_speed * 2 * delta
 	
-<<<<<<< HEAD
 	if Input.is_action_just_released("gearShift"):
-=======
-	if Input.is_action_pressed("gearShift"):
->>>>>>> 2f278774673edad8e485c5aff76697d6593613e5
 		if gearLo != null:
 			if gearShift == 'lo':
 				gearLo.visible = false
