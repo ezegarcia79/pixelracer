@@ -24,10 +24,6 @@ func _on_spawnTimer_timeout():
 	spawnTimer.start(nextSpawnTime)
 	if nextSpawnTime >= 1.0:
 		nextSpawnTime -= 0.5
-	elif (nextSpawnTime > 0.7) and (nextSpawnTime < 1.0):
-		nextSpawnTime -= 0.05
+	elif (nextSpawnTime > 0.8) and (nextSpawnTime < 1.0):
+		nextSpawnTime -= 0.0
 		enemyVariation = 3
-		
-
-	
-

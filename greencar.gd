@@ -1,9 +1,9 @@
 extends Area2D
 
 var verticalSpeed = 300
-onready var hud = $Hud
 var halfDistance = (280 + 30) / 2
 var increment = 1
+var hasPassed = false
 
 func _ready():
 	randomize()
@@ -14,6 +14,10 @@ func _process(delta):
 	else:
 		position.y -= verticalSpeed * delta
 	
+	if not hasPassed and (not $blackCarPassing.playing) and (position.y > 150):
+		hasPassed = true
+		$greenCarPassing.play()
+		
 	verticalSpeed = 1.008 * verticalSpeed
 	if position.y > 2048 or position.y < -1024:
 		queue_free()
