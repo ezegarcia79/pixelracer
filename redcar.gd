@@ -7,7 +7,7 @@ func _ready():
 	randomize()
 	
 func _process(delta):
-	if parallax.gearShift == 'lo':
+	if parallax.gearShift == 'lo' && false:
 		verticalSpeed = verticalSpeed / 2
 	else:
 		verticalSpeed = verticalSpeed

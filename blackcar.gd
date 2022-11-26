@@ -8,7 +8,7 @@ func _ready():
 	
 func _process(delta):
 	
-	if parallax.gearShift == 'lo':
+	if false && parallax.gearShift == 'lo':
 		verticalSpeed = verticalSpeed / 2
 	else:
 		verticalSpeed = verticalSpeed

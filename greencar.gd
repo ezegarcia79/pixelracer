@@ -1,9 +1,10 @@
 extends Area2D
 
-var verticalSpeed = 300
+var verticalSpeed
 var halfDistance = (280 + 30) / 2
 var increment = 1
 var hasPassed = false
+
 
 func _ready():
 	randomize()
@@ -11,10 +12,8 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("accelerate"):
 		position.y += verticalSpeed * delta
-	else:
-		position.y -= verticalSpeed * delta
 	
-	if not hasPassed and (not $blackCarPassing.playing) and (position.y > 150):
+	if not hasPassed and (not $greenCarPassing.playing) and (position.y > 150):
 		hasPassed = true
 		$greenCarPassing.play()
 		
